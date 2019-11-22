@@ -1,0 +1,1468 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 24 24 571 818
+%%Title: Enscript Output
+%%For: Shubham Jante
+%%Creator: GNU Enscript 1.6.6
+%%CreationDate: Mon Nov 11 03:58:37 2019
+%%Orientation: Portrait
+%%Pages: (atend)
+%%DocumentMedia: A4 595 842 0 () ()
+%%DocumentNeededResources: (atend)
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Enscript-Prolog 1.6 6
+%
+% Procedures.
+%
+
+/_S {	% save current state
+  /_s save def
+} def
+/_R {	% restore from saved state
+  _s restore
+} def
+
+/S {	% showpage protecting gstate
+  gsave
+  showpage
+  grestore
+} bind def
+
+/MF {	% fontname newfontname -> -	make a new encoded font
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  % insert only valid encoding vectors
+  encoding_vector length 256 eq {
+    newfont /Encoding encoding_vector put
+  } if
+
+  newfontname newfont definefont pop
+} def
+
+/MF_PS { % fontname newfontname -> -	make a new font preserving its enc
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  newfontname newfont definefont pop
+} def
+
+/SF { % fontname width height -> -	set a new font
+  /height exch def
+  /width exch def
+
+  findfont
+  [width 0 0 height 0 0] makefont setfont
+} def
+
+/SUF { % fontname width height -> -	set a new user font
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF
+  /F-gs-user-font width height SF
+} def
+
+/SUF_PS { % fontname width height -> -	set a new user font preserving its enc
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF_PS
+  /F-gs-user-font width height SF
+} def
+
+/M {moveto} bind def
+/s {show} bind def
+
+/Box {	% x y w h -> -			define box path
+  /d_h exch def /d_w exch def /d_y exch def /d_x exch def
+  d_x d_y  moveto
+  d_w 0 rlineto
+  0 d_h rlineto
+  d_w neg 0 rlineto
+  closepath
+} def
+
+/bgs {	% x y height blskip gray str -> -	show string with bg color
+  /str exch def
+  /gray exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    gray setgray
+    fill
+  grestore
+  x y M str s
+} def
+
+/bgcs { % x y height blskip red green blue str -> -  show string with bg color
+  /str exch def
+  /blue exch def
+  /green exch def
+  /red exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    red green blue setrgbcolor
+    fill
+  grestore
+  x y M str s
+} def
+
+% Highlight bars.
+/highlight_bars {	% nlines lineheight output_y_margin gray -> -
+  gsave
+    setgray
+    /ymarg exch def
+    /lineheight exch def
+    /nlines exch def
+
+    % This 2 is just a magic number to sync highlight lines to text.
+    0 d_header_y ymarg sub 2 sub translate
+
+    /cw d_output_w cols div def
+    /nrows d_output_h ymarg 2 mul sub lineheight div cvi def
+
+    % for each column
+    0 1 cols 1 sub {
+      cw mul /xp exch def
+
+      % for each rows
+      0 1 nrows 1 sub {
+        /rn exch def
+        rn lineheight mul neg /yp exch def
+        rn nlines idiv 2 mod 0 eq {
+	  % Draw highlight bar.  4 is just a magic indentation.
+	  xp 4 add yp cw 8 sub lineheight neg Box fill
+	} if
+      } for
+    } for
+
+  grestore
+} def
+
+% Line highlight bar.
+/line_highlight {	% x y width height gray -> -
+  gsave
+    /gray exch def
+    Box gray setgray fill
+  grestore
+} def
+
+% Column separator lines.
+/column_lines {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h translate
+    /cw d_output_w cols div def
+    1 1 cols 1 sub {
+      cw mul 0 moveto
+      0 d_output_h rlineto stroke
+    } for
+  grestore
+} def
+
+% Column borders.
+/column_borders {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h moveto
+    0 d_output_h rlineto
+    d_output_w 0 rlineto
+    0 d_output_h neg rlineto
+    closepath stroke
+  grestore
+} def
+
+% Do the actual underlay drawing
+/draw_underlay {
+  ul_style 0 eq {
+    ul_str true charpath stroke
+  } {
+    ul_str show
+  } ifelse
+} def
+
+% Underlay
+/underlay {	% - -> -
+  gsave
+    0 d_page_h translate
+    d_page_h neg d_page_w atan rotate
+
+    ul_gray setgray
+    ul_font setfont
+    /dw d_page_h dup mul d_page_w dup mul add sqrt def
+    ul_str stringwidth pop dw exch sub 2 div ul_h_ptsize -2 div moveto
+    draw_underlay
+  grestore
+} def
+
+/user_underlay {	% - -> -
+  gsave
+    ul_x ul_y translate
+    ul_angle rotate
+    ul_gray setgray
+    ul_font setfont
+    0 0 ul_h_ptsize 2 div sub moveto
+    draw_underlay
+  grestore
+} def
+
+% Page prefeed
+/page_prefeed {		% bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} def
+
+% Wrapped line markers
+/wrapped_line_mark {	% x y charwith charheight type -> -
+  /type exch def
+  /h exch def
+  /w exch def
+  /y exch def
+  /x exch def
+
+  type 2 eq {
+    % Black boxes (like TeX does)
+    gsave
+      0 setlinewidth
+      x w 4 div add y M
+      0 h rlineto w 2 div 0 rlineto 0 h neg rlineto
+      closepath fill
+    grestore
+  } {
+    type 3 eq {
+      % Small arrows
+      gsave
+        .2 setlinewidth
+        x w 2 div add y h 2 div add M
+        w 4 div 0 rlineto
+        x w 4 div add y lineto stroke
+
+        x w 4 div add w 8 div add y h 4 div add M
+        x w 4 div add y lineto
+	w 4 div h 8 div rlineto stroke
+      grestore
+    } {
+      % do nothing
+    } ifelse
+  } ifelse
+} def
+
+% EPSF import.
+
+/BeginEPSF {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack
+  userdict begin
+  /showpage { } def
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [ ] 0 setdash newpath
+  /languagelevel where {
+    pop languagelevel
+    1 ne {
+      false setstrokeadjust false setoverprint
+    } if
+  } if
+} bind def
+
+/EndEPSF {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+%%EndResource
+%%BeginResource: procset Enscript-Encoding-88591 1.6 6
+/encoding_vector [
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclam       	/quotedbl     	/numbersign   	
+/dollar       	/percent      	/ampersand    	/quoteright   	
+/parenleft    	/parenright   	/asterisk     	/plus         	
+/comma        	/hyphen       	/period       	/slash        	
+/zero         	/one          	/two          	/three        	
+/four         	/five         	/six          	/seven        	
+/eight        	/nine         	/colon        	/semicolon    	
+/less         	/equal        	/greater      	/question     	
+/at           	/A            	/B            	/C            	
+/D            	/E            	/F            	/G            	
+/H            	/I            	/J            	/K            	
+/L            	/M            	/N            	/O            	
+/P            	/Q            	/R            	/S            	
+/T            	/U            	/V            	/W            	
+/X            	/Y            	/Z            	/bracketleft  	
+/backslash    	/bracketright 	/asciicircum  	/underscore   	
+/quoteleft    	/a            	/b            	/c            	
+/d            	/e            	/f            	/g            	
+/h            	/i            	/j            	/k            	
+/l            	/m            	/n            	/o            	
+/p            	/q            	/r            	/s            	
+/t            	/u            	/v            	/w            	
+/x            	/y            	/z            	/braceleft    	
+/bar          	/braceright   	/tilde        	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclamdown   	/cent         	/sterling     	
+/currency     	/yen          	/brokenbar    	/section      	
+/dieresis     	/copyright    	/ordfeminine  	/guillemotleft	
+/logicalnot   	/hyphen       	/registered   	/macron       	
+/degree       	/plusminus    	/twosuperior  	/threesuperior	
+/acute        	/mu           	/paragraph    	/bullet       	
+/cedilla      	/onesuperior  	/ordmasculine 	/guillemotright	
+/onequarter   	/onehalf      	/threequarters	/questiondown 	
+/Agrave       	/Aacute       	/Acircumflex  	/Atilde       	
+/Adieresis    	/Aring        	/AE           	/Ccedilla     	
+/Egrave       	/Eacute       	/Ecircumflex  	/Edieresis    	
+/Igrave       	/Iacute       	/Icircumflex  	/Idieresis    	
+/Eth          	/Ntilde       	/Ograve       	/Oacute       	
+/Ocircumflex  	/Otilde       	/Odieresis    	/multiply     	
+/Oslash       	/Ugrave       	/Uacute       	/Ucircumflex  	
+/Udieresis    	/Yacute       	/Thorn        	/germandbls   	
+/agrave       	/aacute       	/acircumflex  	/atilde       	
+/adieresis    	/aring        	/ae           	/ccedilla     	
+/egrave       	/eacute       	/ecircumflex  	/edieresis    	
+/igrave       	/iacute       	/icircumflex  	/idieresis    	
+/eth          	/ntilde       	/ograve       	/oacute       	
+/ocircumflex  	/otilde       	/odieresis    	/divide       	
+/oslash       	/ugrave       	/uacute       	/ucircumflex  	
+/udieresis    	/yacute       	/thorn        	/ydieresis    	
+] def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Courier
+/HFpt_w 10 def
+/HFpt_h 10 def
+/Courier-Bold /HF-gs-font MF
+/HF /HF-gs-font findfont [HFpt_w 0 0 HFpt_h 0 0] makefont def
+/Courier /F-gs-font MF
+/F-gs-font 10 10 SF
+/#copies 1 def
+% Pagedevice definitions:
+gs_languagelevel 1 gt {
+  <<
+    /PageSize [595 842] 
+  >> setpagedevice
+} if
+%%BeginResource: procset Enscript-Header-simple 1.6 6
+
+/do_header {	% print default simple header
+  gsave
+    d_header_x d_header_y HFpt_h 3 div add translate
+
+    HF setfont
+    user_header_p {
+      5 0 moveto user_header_left_str show
+
+      d_header_w user_header_center_str stringwidth pop sub 2 div
+      0 moveto user_header_center_str show
+
+      d_header_w user_header_right_str stringwidth pop sub 5 sub
+      0 moveto user_header_right_str show
+    } {
+      5 0 moveto fname show
+      45 0 rmoveto fmodstr show
+      45 0 rmoveto pagenumstr show
+    } ifelse
+
+  grestore
+} def
+%%EndResource
+/d_page_w 547 def
+/d_page_h 794 def
+/d_header_x 0 def
+/d_header_y 779 def
+/d_header_w 547 def
+/d_header_h 15 def
+/d_footer_x 0 def
+/d_footer_y 0 def
+/d_footer_w 547 def
+/d_footer_h 0 def
+/d_output_w 547 def
+/d_output_h 779 def
+/cols 1 def
+%%EndSetup
+%%Page: (1) 1
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 1 def
+/fname (Assignment on all selection types in python - Level 3.py) def
+/fdir (.) def
+/ftail (Assignment on all selection types in python - Level 3.py) def
+% User defined strings:
+/fmodstr (Mon Nov 11 00:54:45 2019) def
+/pagenumstr (1) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+do_header
+30 766 M (1:) s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+48 766 M
+(""") s
+/F-gs-font 10 10 SF
+30 755 M (2:) s
+/Courier-Bold 10 10 SUF
+48 755 M
+(The Metro Bank provides various types of loans such as car loans, business loans a) s
+/F-gs-font 10 10 SF
+30 744 M (3:) s
+/Courier-Bold 10 10 SUF
+48 744 M
+(Write a python program to implement the following requirements:) s
+/F-gs-font 10 10 SF
+30 733 M (4:) s
+/Courier-Bold 10 10 SUF
+/F-gs-font 10 10 SF
+30 722 M (5:) s
+/Courier-Bold 10 10 SUF
+48 722 M
+(1. Initialize the following variables with appropriate input values:account_number) s
+/F-gs-font 10 10 SF
+30 711 M (6:) s
+/Courier-Bold 10 10 SUF
+48 711 M
+(loan_amount_expected and customer_emi_expected.) s
+/F-gs-font 10 10 SF
+30 700 M (7:) s
+/Courier-Bold 10 10 SUF
+/F-gs-font 10 10 SF
+30 689 M (8:) s
+/Courier-Bold 10 10 SUF
+48 689 M
+(2. The account number should be of 4 digits and its first digit should be 1.) s
+/F-gs-font 10 10 SF
+30 678 M (9:) s
+/Courier-Bold 10 10 SUF
+/F-gs-font 10 10 SF
+24 667 M (10:) s
+/Courier-Bold 10 10 SUF
+48 667 M
+(3. The customer should have a minimum balance of Rupees 1 Lakh in the account.) s
+/F-gs-font 10 10 SF
+24 656 M (11:) s
+/Courier-Bold 10 10 SUF
+/F-gs-font 10 10 SF
+24 645 M (12:) s
+/Courier-Bold 10 10 SUF
+48 645 M
+(4. If the above rules are valid, determine the eligible loan amount and the EMI th) s
+/F-gs-font 10 10 SF
+24 634 M (13:) s
+/Courier-Bold 10 10 SUF
+48 634 M
+(customers based on their salary and the loan type they expect to avail.) s
+/F-gs-font 10 10 SF
+24 623 M (14:) s
+/Courier-Bold 10 10 SUF
+/F-gs-font 10 10 SF
+24 612 M (15:) s
+/Courier-Bold 10 10 SUF
+48 612 M
+(5. The bank would provide the loan, only if the loan amount and the number of EMI\342) s
+/F-gs-font 10 10 SF
+24 601 M (16:) s
+/Courier-Bold 10 10 SUF
+48 601 M
+(less than or equal to the loan amount and the number of EMI\342\\200\\231s decided by t) s
+/F-gs-font 10 10 SF
+24 590 M (17:) s
+/Courier-Bold 10 10 SUF
+/F-gs-font 10 10 SF
+24 579 M (18:) s
+/Courier-Bold 10 10 SUF
+48 579 M
+(Display appropriate error messages for all invalid data. If all the business rules) s
+/F-gs-font 10 10 SF
+24 568 M (19:) s
+/Courier-Bold 10 10 SUF
+48 568 M
+(account number, eligible and requested loan amount and EMI\342\\200\\231s.) s
+/F-gs-font 10 10 SF
+24 557 M (20:) s
+/Courier-Bold 10 10 SUF
+/F-gs-font 10 10 SF
+24 546 M (21:) s
+/Courier-Bold 10 10 SUF
+48 546 M
+(Test your code by providing different values for the input variables.) s
+/F-gs-font 10 10 SF
+24 535 M (22:) s
+/Courier-Bold 10 10 SUF
+/F-gs-font 10 10 SF
+24 524 M (23:) s
+/Courier-Bold 10 10 SUF
+48 524 M
+(=================================================================================) s
+/F-gs-font 10 10 SF
+24 513 M (24:) s
+/Courier-Bold 10 10 SUF
+48 513 M
+(| Salary    | Loan Type | Eligible Loan Amount  | No of EMI Required ro repay   |) s
+/F-gs-font 10 10 SF
+24 502 M (25:) s
+/Courier-Bold 10 10 SUF
+48 502 M
+(=================================================================================) s
+/F-gs-font 10 10 SF
+24 491 M (26:) s
+/Courier-Bold 10 10 SUF
+48 491 M
+(| > 25000   | Car       | 500000                | 36                            |) s
+/F-gs-font 10 10 SF
+24 480 M (27:) s
+/Courier-Bold 10 10 SUF
+48 480 M
+(| > 50000   | House     | 6000000               | 60                            |) s
+/F-gs-font 10 10 SF
+24 469 M (28:) s
+/Courier-Bold 10 10 SUF
+48 469 M
+(| > 75000   | Business  | 7500000               | 84                            |) s
+/F-gs-font 10 10 SF
+24 458 M (29:) s
+/Courier-Bold 10 10 SUF
+48 458 M
+(=================================================================================) s
+/F-gs-font 10 10 SF
+24 447 M (30:) s
+/Courier-Bold 10 10 SUF
+48 447 M
+(""") s
+/F-gs-font 10 10 SF
+0 setgray
+24 436 M (31:) s
+24 425 M (32:) s
+24 414 M (33:) s
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 414 M
+(# def calculate_loan\(account_number, salary, account_balance, loan_type, loan_amou) s
+/F-gs-font 10 10 SF
+24 403 M (34:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 403 M
+(#     eligible_loan_amount = 0) s
+/F-gs-font 10 10 SF
+24 392 M (35:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 392 M
+(#     bank_emi_expected = 0) s
+/F-gs-font 10 10 SF
+24 381 M (36:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 381 M
+(#     eligible_loan_amount = 0) s
+/F-gs-font 10 10 SF
+24 370 M (37:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 370 M
+(#) s
+/F-gs-font 10 10 SF
+24 359 M (38:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 359 M
+(#     if str\(account_number\) != 4 or str\(account_number\)[0] != 1:) s
+/F-gs-font 10 10 SF
+24 348 M (39:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 348 M
+(#         print\("Invalid account number"\)) s
+/F-gs-font 10 10 SF
+24 337 M (40:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 337 M
+(#     if account_balance < 100000:) s
+/F-gs-font 10 10 SF
+24 326 M (41:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 326 M
+(#         print\("Insufficient account balance"\)) s
+/F-gs-font 10 10 SF
+24 315 M (42:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 315 M
+(#     if loan_type not in ['Car', 'House', 'Business'] or salary <= 25000:) s
+/F-gs-font 10 10 SF
+24 304 M (43:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 304 M
+(#         print\("Invalid loan type or salary"\)) s
+/F-gs-font 10 10 SF
+24 293 M (44:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 293 M
+(#) s
+/F-gs-font 10 10 SF
+24 282 M (45:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 282 M
+(#     if salary in range\(25001, 50001\):) s
+/F-gs-font 10 10 SF
+24 271 M (46:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 271 M
+(#         loan = ['Car']) s
+/F-gs-font 10 10 SF
+24 260 M (47:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 260 M
+(#     elif salary in range\(50000, 75001\):) s
+/F-gs-font 10 10 SF
+24 249 M (48:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 249 M
+(#         loan = ['Car', 'House']) s
+/F-gs-font 10 10 SF
+24 238 M (49:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 238 M
+(#     elif salary > 75000:) s
+/F-gs-font 10 10 SF
+24 227 M (50:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+/Courier-Oblique 10 10 SUF
+0.698039 0.133333 0.133333 setrgbcolor
+48 227 M
+(#         loan = ['Car', 'House', 'Business']) s
+/F-gs-font 10 10 SF
+24 216 M (51:) s
+/Courier-Oblique 10 10 SUF
+/F-gs-font 10 10 SF
+0 setgray
+24 205 M (52:) s
+24 194 M (53:) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+48 194 M
+(def) s
+/F-gs-font 10 10 SF
+0 setgray
+66 194 M
+( ) s
+/Courier-Bold 10 10 SUF
+0 0 1 setrgbcolor
+72 194 M
+(calculate_loan) s
+/F-gs-font 10 10 SF
+0 setgray
+156 194 M
+(\(account_number,salary,account_balance,loan_type,loan_amount_exp) s
+24 183 M (54:) s
+48 183 M
+(    eligible_loan_amount = 0) s
+24 172 M (55:) s
+48 172 M
+(    bank_emi_expected = 0) s
+24 161 M (56:) s
+48 161 M
+(    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+72 161 M
+(if) s
+/F-gs-font 10 10 SF
+0 setgray
+84 161 M
+( 999 < account_number < 2000:) s
+24 150 M (57:) s
+48 150 M
+(        ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+96 150 M
+(if) s
+/F-gs-font 10 10 SF
+0 setgray
+108 150 M
+( account_balance >= 100000:) s
+24 139 M (58:) s
+48 139 M
+(            ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+120 139 M
+(if) s
+/F-gs-font 10 10 SF
+0 setgray
+132 139 M
+( salary > 25000 ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+228 139 M
+(and) s
+/F-gs-font 10 10 SF
+0 setgray
+246 139 M
+( loan_type == ) s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+330 139 M
+("Car") s
+/F-gs-font 10 10 SF
+0 setgray
+360 139 M
+(:) s
+24 128 M (59:) s
+48 128 M
+(                eligible_loan_amount = 500000) s
+24 117 M (60:) s
+48 117 M
+(                bank_emi_expected = 36) s
+24 106 M (61:) s
+48 106 M
+(                ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+144 106 M
+(if) s
+/F-gs-font 10 10 SF
+0 setgray
+156 106 M
+( loan_amount_expected <= eligible_loan_amount ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+432 106 M
+(and) s
+/F-gs-font 10 10 SF
+0 setgray
+450 106 M
+( customer_emi_e) s
+24 95 M (62:) s
+48 95 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 95 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 95 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 95 M
+("Account number:") s
+/F-gs-font 10 10 SF
+0 setgray
+306 95 M
+(, account_number\)) s
+24 84 M (63:) s
+48 84 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 84 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 84 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 84 M
+("The customer can avail the amount of Rs.") s
+/F-gs-font 10 10 SF
+0 setgray
+456 84 M
+(, eligible_loa) s
+24 73 M (64:) s
+48 73 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 73 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 73 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 73 M
+("Eligible EMIs :") s
+/F-gs-font 10 10 SF
+0 setgray
+306 73 M
+(, bank_emi_expected\)) s
+24 62 M (65:) s
+48 62 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 62 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 62 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 62 M
+("Requested loan amount:") s
+/F-gs-font 10 10 SF
+0 setgray
+348 62 M
+(, loan_amount_expected\)) s
+24 51 M (66:) s
+48 51 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 51 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 51 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 51 M
+("Requested EMI's:") s
+/F-gs-font 10 10 SF
+0 setgray
+312 51 M
+(,customer_emi_expected\)) s
+24 40 M (67:) s
+48 40 M
+(                ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+144 40 M
+(else) s
+/F-gs-font 10 10 SF
+0 setgray
+168 40 M
+(:) s
+24 29 M (68:) s
+48 29 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 29 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 29 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 29 M
+("The customer is not eligible for the loan") s
+/F-gs-font 10 10 SF
+0 setgray
+462 29 M
+(\)) s
+24 18 M (69:) s
+48 18 M
+(            ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+120 18 M
+(elif) s
+/F-gs-font 10 10 SF
+0 setgray
+144 18 M
+( salary > 50000 ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+240 18 M
+(and) s
+/F-gs-font 10 10 SF
+0 setgray
+258 18 M
+( loan_type == ) s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+342 18 M
+("House") s
+/F-gs-font 10 10 SF
+0 setgray
+384 18 M
+(:) s
+24 7 M (70:) s
+48 7 M
+(                eligible_loan_amount = 6000000) s
+_R
+S
+%%Page: (2) 2
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 2 def
+/fname (Assignment on all selection types in python - Level 3.py) def
+/fdir (.) def
+/ftail (Assignment on all selection types in python - Level 3.py) def
+% User defined strings:
+/fmodstr (Mon Nov 11 00:54:45 2019) def
+/pagenumstr (2) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+do_header
+24 766 M (71:) s
+48 766 M
+(                bank_emi_expected = 60) s
+24 755 M (72:) s
+48 755 M
+(                ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+144 755 M
+(if) s
+/F-gs-font 10 10 SF
+0 setgray
+156 755 M
+( loan_amount_expected <= eligible_loan_amount ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+432 755 M
+(and) s
+/F-gs-font 10 10 SF
+0 setgray
+450 755 M
+( customer_emi_e) s
+24 744 M (73:) s
+48 744 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 744 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 744 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 744 M
+("Account number:") s
+/F-gs-font 10 10 SF
+0 setgray
+306 744 M
+(, account_number\)) s
+24 733 M (74:) s
+48 733 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 733 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 733 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 733 M
+("The customer can avail the amount of Rs.") s
+/F-gs-font 10 10 SF
+0 setgray
+456 733 M
+(, eligible_loa) s
+24 722 M (75:) s
+48 722 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 722 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 722 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 722 M
+("Eligible EMIs :") s
+/F-gs-font 10 10 SF
+0 setgray
+306 722 M
+(, bank_emi_expected\)) s
+24 711 M (76:) s
+48 711 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 711 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 711 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 711 M
+("Requested loan amount:") s
+/F-gs-font 10 10 SF
+0 setgray
+348 711 M
+(, loan_amount_expected\)) s
+24 700 M (77:) s
+48 700 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 700 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 700 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 700 M
+("Requested EMI's:") s
+/F-gs-font 10 10 SF
+0 setgray
+312 700 M
+(, customer_emi_expected\)) s
+24 689 M (78:) s
+48 689 M
+(                ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+144 689 M
+(else) s
+/F-gs-font 10 10 SF
+0 setgray
+168 689 M
+(:) s
+24 678 M (79:) s
+48 678 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 678 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 678 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 678 M
+("The customer is not eligible for the loan") s
+/F-gs-font 10 10 SF
+0 setgray
+462 678 M
+(\)) s
+24 667 M (80:) s
+48 667 M
+(            ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+120 667 M
+(elif) s
+/F-gs-font 10 10 SF
+0 setgray
+144 667 M
+( salary > 75000 ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+240 667 M
+(and) s
+/F-gs-font 10 10 SF
+0 setgray
+258 667 M
+( loan_type == ) s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+342 667 M
+("Business") s
+/F-gs-font 10 10 SF
+0 setgray
+402 667 M
+(:) s
+24 656 M (81:) s
+48 656 M
+(                eligible_loan_amount = 7500000) s
+24 645 M (82:) s
+48 645 M
+(                bank_emi_expected = 84) s
+24 634 M (83:) s
+48 634 M
+(                ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+144 634 M
+(if) s
+/F-gs-font 10 10 SF
+0 setgray
+156 634 M
+( loan_amount_expected <= eligible_loan_amount ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+432 634 M
+(and) s
+/F-gs-font 10 10 SF
+0 setgray
+450 634 M
+( customer_emi_e) s
+24 623 M (84:) s
+48 623 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 623 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 623 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 623 M
+("Account number:") s
+/F-gs-font 10 10 SF
+0 setgray
+306 623 M
+(, account_number\)) s
+24 612 M (85:) s
+48 612 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 612 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 612 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 612 M
+("The customer can avail the amount of Rs.") s
+/F-gs-font 10 10 SF
+0 setgray
+456 612 M
+(, eligible_loa) s
+24 601 M (86:) s
+48 601 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 601 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 601 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 601 M
+("Eligible EMIs :") s
+/F-gs-font 10 10 SF
+0 setgray
+306 601 M
+(, bank_emi_expected\)) s
+24 590 M (87:) s
+48 590 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 590 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 590 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 590 M
+("Requested loan amount:") s
+/F-gs-font 10 10 SF
+0 setgray
+348 590 M
+(, loan_amount_expected\)) s
+24 579 M (88:) s
+48 579 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 579 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 579 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 579 M
+("Requested EMI's:") s
+/F-gs-font 10 10 SF
+0 setgray
+312 579 M
+(, customer_emi_expected\)) s
+24 568 M (89:) s
+48 568 M
+(                ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+144 568 M
+(else) s
+/F-gs-font 10 10 SF
+0 setgray
+168 568 M
+(:) s
+24 557 M (90:) s
+48 557 M
+(                    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+168 557 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+198 557 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+204 557 M
+("The customer is not eligible for the loan") s
+/F-gs-font 10 10 SF
+0 setgray
+462 557 M
+(\)) s
+24 546 M (91:) s
+48 546 M
+(            ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+120 546 M
+(else) s
+/F-gs-font 10 10 SF
+0 setgray
+144 546 M
+(:) s
+24 535 M (92:) s
+48 535 M
+(                ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+144 535 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+174 535 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+180 535 M
+("Invalid loan type or salary") s
+/F-gs-font 10 10 SF
+0 setgray
+354 535 M
+(\)) s
+24 524 M (93:) s
+48 524 M
+(        ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+96 524 M
+(else) s
+/F-gs-font 10 10 SF
+0 setgray
+120 524 M
+(:) s
+24 513 M (94:) s
+48 513 M
+(            ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+120 513 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+150 513 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+156 513 M
+("Insufficient account balance") s
+/F-gs-font 10 10 SF
+0 setgray
+336 513 M
+(\)) s
+24 502 M (95:) s
+48 502 M
+(    ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+72 502 M
+(else) s
+/F-gs-font 10 10 SF
+0 setgray
+96 502 M
+(:) s
+24 491 M (96:) s
+48 491 M
+(        ) s
+/Courier-Bold 10 10 SUF
+0.627451 0.12549 0.941176 setrgbcolor
+96 491 M
+(print) s
+/F-gs-font 10 10 SF
+0 setgray
+126 491 M
+(\() s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+132 491 M
+("Invalid account number") s
+/F-gs-font 10 10 SF
+0 setgray
+276 491 M
+(\)) s
+24 480 M (97:) s
+24 469 M (98:) s
+24 458 M (99:) s
+48 458 M
+(calculate_loan\(1001, 40000, 250000, ) s
+/Courier-Bold 10 10 SUF
+0.737255 0.560784 0.560784 setrgbcolor
+264 458 M
+("Car") s
+/F-gs-font 10 10 SF
+0 setgray
+294 458 M
+(, 300000, 30\)) s
+_R
+S
+%%Trailer
+%%Pages: 2
+%%DocumentNeededResources: font Courier-Oblique Courier-Bold Courier 
+%%EOF

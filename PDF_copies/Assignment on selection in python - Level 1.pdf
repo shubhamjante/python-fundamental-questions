@@ -1,0 +1,415 @@
+%PDF-1.3
+%‚„œ”
+2 0 obj
+<<
+/Length 3624
+>>
+stream
+BT
+/TT2 1 Tf
+10 0 0 10 29 806.3333 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(./Programming Fundamentals using Python - Part 01/Assignment Set - 02/Assignment on selection )Tj
+ET
+BT
+10 0 0 10 593.0918 806.3333 Tm
+(i)Tj
+ET
+BT
+/TT4 1 Tf
+7 0 0 7 46.8 793 Tm
+(1:)Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+1.8 0 TD
+(""")Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(2:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(Write a python program to find and display the product of three positive integer values based on the rule)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(3:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(mentioned below:)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(4:)Tj
+T*
+(5:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(It should display the product of the three values except when one of the integer value is 7. In that case,)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(6:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(7 should not be included in the product and the values to its left also should not be included.)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(7:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(If there is only one value to be considered, display that value itself. If no values can be included in the product,)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(8:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(display -1.)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(9:)Tj
+-0.6 -1.1429 TD
+(10:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(Note: Assume that if 7 is one of the positive integer values, then it will occur only once.)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(11:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(Refer the sample I/O given below.)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(12:)Tj
+T*
+(13:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(=====================================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(14:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| Sample Input  | Expected Output   |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(15:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(=====================================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(16:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| 1, 5, 3       | 15                |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(17:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| 3, 7, 8       | 8                 |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(18:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| 7, 4, 3       | 12                |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(19:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| 1, 5, 7       | -1                |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(20:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(=====================================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(21:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(""")Tj
+/TT4 1 Tf
+0 g
+-2.4 -1.1429 TD
+(22:)Tj
+T*
+(23:)Tj
+T*
+(24:)Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+2.4 0 TD
+(def)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( )Tj
+/TT2 1 Tf
+0 0 1 rg
+0.6 0 TD
+(find_product)Tj
+/TT4 1 Tf
+0 g
+7.2 0 TD
+(\(num1, num2, num3\):)Tj
+-12 -1.1429 TD
+[(25:)-599.7(    product = 0)]TJ
+T*
+[(26:)-599.7(    )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+4.8 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( num3 == 7:)Tj
+-6 -1.1429 TD
+[(27:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(return)Tj
+/TT4 1 Tf
+0 g
+3.6 0 TD
+( -1)Tj
+-10.8 -1.1429 TD
+[(28:)-599.7(    )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+4.8 0 TD
+(elif)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+( num2 == 7:)Tj
+-7.2 -1.1429 TD
+[(29:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(return)Tj
+/TT4 1 Tf
+0 g
+3.6 0 TD
+( num3)Tj
+-10.8 -1.1429 TD
+[(30:)-599.7(    )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+4.8 0 TD
+(elif)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+( num1 == 7:)Tj
+-7.2 -1.1429 TD
+[(31:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(return)Tj
+/TT4 1 Tf
+0 g
+3.6 0 TD
+( num2 * num3)Tj
+-10.8 -1.1429 TD
+[(32:)-599.7(    )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+4.8 0 TD
+(else)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+(:)Tj
+-7.2 -1.1429 TD
+[(33:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(return)Tj
+/TT4 1 Tf
+0 g
+3.6 0 TD
+( num1 * num2 * num3)Tj
+-10.8 -1.1429 TD
+(34:)Tj
+T*
+(35:)Tj
+T*
+(36:)Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+2.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\(find_product\(7, 2, 3\)\))Tj
+ET
+endstream
+endobj
+3 0 obj
+<<
+/ProcSet [/PDF /Text ]
+/Font <<
+/TT2 4 0 R
+/TT4 5 0 R
+>>
+/ExtGState <<
+/GS1 6 0 R
+>>
+>>
+endobj
+6 0 obj
+<<
+/Type /ExtGState
+/SA false
+/SM 0.02
+/OP false
+/op false
+/OPM 1
+/BG2 /Default
+/UCR2 /Default
+/HT /Default
+/TR2 /Default
+>>
+endobj
+8 0 obj
+<<
+/Type /FontDescriptor
+/Ascent 753
+/CapHeight 562
+/Descent -246
+/Flags 262179
+/FontBBox [-113 -250 749 801]
+/FontName /Courier-Bold
+/ItalicAngle 0
+/StemV 133
+/XHeight 439
+/StemH 84
+>>
+endobj
+9 0 obj
+<<
+/Type /FontDescriptor
+/Ascent 753
+/CapHeight 562
+/Descent -246
+/Flags 35
+/FontBBox [-28 -250 628 805]
+/FontName /Courier
+/ItalicAngle 0
+/StemV 51
+/XHeight 426
+/StemH 51
+>>
+endobj
+4 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/FirstChar 32
+/LastChar 124
+/Widths [600 0 600 0 0 0 0 0 0 0 0 0 600 600 600 600 
+600 600 600 600 600 600 0 600 600 600 600 0 0 600 0 0 
+0 600 0 0 0 600 600 0 0 600 0 0 600 0 600 600 
+600 0 600 600 0 0 0 600 0 0 0 0 0 0 0 600 
+0 600 600 600 600 600 600 600 600 600 0 0 600 600 600 600 
+600 0 600 600 600 600 600 600 600 600 0 0 600 ]
+/Encoding /WinAnsiEncoding
+/BaseFont /Courier-Bold
+/FontDescriptor 8 0 R
+>>
+endobj
+5 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/FirstChar 32
+/LastChar 117
+/Widths [600 0 0 0 0 0 0 0 600 600 600 0 600 600 0 0 
+600 600 600 600 600 600 600 600 600 600 600 0 0 600 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 600 
+0 0 0 600 600 0 600 0 0 600 0 0 0 600 600 600 
+600 0 600 0 600 600 ]
+/Encoding /WinAnsiEncoding
+/BaseFont /Courier
+/FontDescriptor 9 0 R
+>>
+endobj
+1 0 obj
+<<
+/Type /Page
+/Parent 7 0 R
+/Resources 3 0 R
+/Contents 2 0 R
+>>
+endobj
+10 0 obj
+<<
+/S /D
+>>
+endobj
+11 0 obj
+<<
+/Nums [0 10 0 R ]
+>>
+endobj
+7 0 obj
+<<
+/Type /Pages
+/Kids [1 0 R]
+/Count 1
+/MediaBox [0 0 595 842]
+>>
+endobj
+12 0 obj
+<<
+/CreationDate (D:20191111044252+05'30')
+/ModDate (D:20191111044252+05'30')
+/Producer (PSNormalizer.framework)
+>>
+endobj
+13 0 obj
+<<
+/Type /Catalog
+/Pages 7 0 R
+/PageLabels 11 0 R
+>>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000005184 00000 n 
+0000000016 00000 n 
+0000003692 00000 n 
+0000004329 00000 n 
+0000004788 00000 n 
+0000003798 00000 n 
+0000005332 00000 n 
+0000003938 00000 n 
+0000004139 00000 n 
+0000005264 00000 n 
+0000005292 00000 n 
+0000005413 00000 n 
+0000005545 00000 n 
+trailer
+<<
+/Size 14
+/Root 13 0 R
+/Info 12 0 R
+/ID [<482861f465e1ab314d2faf48d45e1d59><482861f465e1ab314d2faf48d45e1d59>]
+>>
+startxref
+5614
+%%EOF

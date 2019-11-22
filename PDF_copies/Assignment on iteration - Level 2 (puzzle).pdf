@@ -1,0 +1,373 @@
+%PDF-1.3
+%‚„œ”
+2 0 obj
+<<
+/Length 2996
+>>
+stream
+BT
+/TT2 1 Tf
+10 0 0 10 29 806.3333 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(./Programming Fundamentals using Python - Part 01/Assignment Set - 02/Assignment on iteration )Tj
+ET
+BT
+10 0 0 10 593.0918 806.3333 Tm
+(-)Tj
+ET
+BT
+/TT4 1 Tf
+7 0 0 7 46.8 793 Tm
+(1:)Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+1.8 0 TD
+(""")Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(2:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(Write a python program to solve a classic ancient Chinese puzzle.)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(3:)Tj
+T*
+(4:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(We count 35 heads and 94 legs among the chickens and rabbits in a farm.)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(5:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(How many rabbits and how many chickens do we have?)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(6:)Tj
+T*
+(7:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(=============================================)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(8:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(| Sample Input          | Expected Output   |)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(9:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(=============================================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(10:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| heads-150 legs-400    | 100 50            |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(11:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| heads-3 legs-11       | No solution       |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(12:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| heads-3 legs-12       | 0 3               |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(13:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| heads-5 legs-10       | 5 0               |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(14:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(=============================================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(15:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(""")Tj
+/TT4 1 Tf
+0 g
+-2.4 -1.1429 TD
+(16:)Tj
+T*
+(17:)Tj
+T*
+(18:)Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+2.4 0 TD
+(def)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( )Tj
+/TT2 1 Tf
+0 0 1 rg
+0.6 0 TD
+(solve)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\(heads, legs\):)Tj
+-7.8 -1.1429 TD
+[(19:)-599.7(    error_msg = )]TJ
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+12 0 TD
+("No solution")Tj
+/TT4 1 Tf
+0 g
+-12 -1.1429 TD
+(20:)Tj
+T*
+[(21:)-599.7(    rabbit_count = \(legs - \(2 * heads\)\)/2)]TJ
+T*
+[(22:)-599.7(    chicken_count = heads - rabbit_count)]TJ
+T*
+[(23:)-599.7(    )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+4.8 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( rabbit_count >= 0 )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+11.4 0 TD
+(and)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( chicken_count >= 0 )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+12 0 TD
+(and)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( rabbit_count == int\(rabbit_count\) )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+21 0 TD
+(and)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( chicken_count == int\(chicken_c)Tj
+-57.7429 -1.1429 TD
+(ount\):)Tj
+1.9429 -1.1429 TD
+[(24:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\(int\(chicken_count\), int\(rabbit_count\)\))Tj
+-10.2 -1.1429 TD
+[(25:)-599.7(    )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+4.8 0 TD
+(else)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+(:)Tj
+-7.2 -1.1429 TD
+[(26:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\(error_msg\))Tj
+-10.2 -1.1429 TD
+(27:)Tj
+T*
+(28:)Tj
+T*
+[(29:)-599.7(solve\(38, 131\))]TJ
+ET
+endstream
+endobj
+3 0 obj
+<<
+/ProcSet [/PDF /Text ]
+/Font <<
+/TT2 4 0 R
+/TT4 5 0 R
+>>
+/ExtGState <<
+/GS1 6 0 R
+>>
+>>
+endobj
+6 0 obj
+<<
+/Type /ExtGState
+/SA false
+/SM 0.02
+/OP false
+/op false
+/OPM 1
+/BG2 /Default
+/UCR2 /Default
+/HT /Default
+/TR2 /Default
+>>
+endobj
+8 0 obj
+<<
+/Type /FontDescriptor
+/Ascent 753
+/CapHeight 562
+/Descent -246
+/Flags 262179
+/FontBBox [-113 -250 749 801]
+/FontName /Courier-Bold
+/ItalicAngle 0
+/StemV 133
+/XHeight 439
+/StemH 84
+>>
+endobj
+9 0 obj
+<<
+/Type /FontDescriptor
+/Ascent 753
+/CapHeight 562
+/Descent -246
+/Flags 35
+/FontBBox [-28 -250 628 805]
+/FontName /Courier
+/ItalicAngle 0
+/StemV 51
+/XHeight 426
+/StemH 51
+>>
+endobj
+4 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/FirstChar 32
+/LastChar 124
+/Widths [600 0 600 0 0 0 0 0 600 600 0 0 0 600 600 600 
+600 600 600 600 600 600 0 0 0 600 600 0 0 600 0 600 
+0 600 0 600 0 600 600 0 600 600 0 0 600 600 600 600 
+600 0 0 600 0 0 0 600 0 0 0 0 0 0 0 0 
+0 600 600 600 600 600 600 600 600 600 0 600 600 600 600 600 
+600 0 600 600 600 600 600 600 600 600 600 0 600 ]
+/Encoding /WinAnsiEncoding
+/BaseFont /Courier-Bold
+/FontDescriptor 8 0 R
+>>
+endobj
+5 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/FirstChar 32
+/LastChar 118
+/Widths [600 0 0 0 0 0 0 0 600 600 600 0 600 600 0 600 
+600 600 600 600 600 600 600 600 600 600 600 0 0 600 600 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 600 
+0 600 600 600 600 600 0 600 600 600 0 600 600 600 600 600 
+0 0 600 600 600 600 600 ]
+/Encoding /WinAnsiEncoding
+/BaseFont /Courier
+/FontDescriptor 9 0 R
+>>
+endobj
+1 0 obj
+<<
+/Type /Page
+/Parent 7 0 R
+/Resources 3 0 R
+/Contents 2 0 R
+>>
+endobj
+10 0 obj
+<<
+/S /D
+>>
+endobj
+11 0 obj
+<<
+/Nums [0 10 0 R ]
+>>
+endobj
+7 0 obj
+<<
+/Type /Pages
+/Kids [1 0 R]
+/Count 1
+/MediaBox [0 0 595 842]
+>>
+endobj
+12 0 obj
+<<
+/CreationDate (D:20191111044252+05'30')
+/ModDate (D:20191111044252+05'30')
+/Producer (PSNormalizer.framework)
+>>
+endobj
+13 0 obj
+<<
+/Type /Catalog
+/Pages 7 0 R
+/PageLabels 11 0 R
+>>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000004582 00000 n 
+0000000016 00000 n 
+0000003064 00000 n 
+0000003701 00000 n 
+0000004166 00000 n 
+0000003170 00000 n 
+0000004730 00000 n 
+0000003310 00000 n 
+0000003511 00000 n 
+0000004662 00000 n 
+0000004690 00000 n 
+0000004811 00000 n 
+0000004943 00000 n 
+trailer
+<<
+/Size 14
+/Root 13 0 R
+/Info 12 0 R
+/ID [<331acd9a6397123872d704d97c6b353f><331acd9a6397123872d704d97c6b353f>]
+>>
+startxref
+5012
+%%EOF

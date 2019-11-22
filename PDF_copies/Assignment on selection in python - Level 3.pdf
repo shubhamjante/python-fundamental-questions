@@ -1,0 +1,556 @@
+%PDF-1.3
+%‚„œ”
+2 0 obj
+<<
+/Length 5893
+>>
+stream
+BT
+/TT2 1 Tf
+10 0 0 10 29 806.3333 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(./Programming Fundamentals using Python - Part 01/Assignment Set - 02/Assignment on selection )Tj
+ET
+BT
+10 0 0 10 593.0918 806.3333 Tm
+(i)Tj
+ET
+BT
+/TT4 1 Tf
+7 0 0 7 46.8 793 Tm
+(1:)Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+1.8 0 TD
+(""")Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(2:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(FoodCorner home delivers vegetarian and non-vegetarian combos to its customer based on order.)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(3:)Tj
+T*
+(4:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(A vegetarian combo costs Rs.120 per plate and a non-vegetarian combo costs Rs.150 per plate.)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(5:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(Their non-veg combo is really famous that they get more orders for their non-vegetarian combo than the vegetarian combo.)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(6:)Tj
+T*
+(7:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(Apart from the cost per plate of food, customers are also charged for home delivery based on the distance in kms)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(8:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(from the restaurant to the delivery point. The delivery charges are as mentioned below:)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(9:)Tj
+-0.6 -1.1429 TD
+(10:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(=====================================================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(11:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| Distance in kms   | Delivery charge in Rs per km  |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(12:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(=====================================================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(13:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| For first 3kms    | 0                             |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(14:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| For next 3kms     | 3                             |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(15:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| For the remaining | 6                             |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(16:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(=====================================================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(17:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(Given the type of food, quantity \(no. of plates\) and the distance in kms from the restaurant to the delivery point,)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(18:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(write a python program to calculate the final bill amount to be paid by a customer.)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(19:)Tj
+T*
+(20:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(The below information must be used to check the validity of the data provided by the customer:)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(21:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(Type of food must be ‚\\200\\230V‚\\200\\231 for vegetarian and ‚\\200\\230N‚\\200\\231 for non-vegetarian.)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(22:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(Distance in kms must be greater than 0.)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(23:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(Quantity ordered should be minimum 1.)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(24:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(If any of the input is invalid, the bill amount should be considered as -1.)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(25:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(""")Tj
+/TT4 1 Tf
+0 g
+-2.4 -1.1429 TD
+(26:)Tj
+T*
+(27:)Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+2.4 0 TD
+(""")Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(28:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(=====================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(29:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(Not able to solve)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(30:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(=====================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(31:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(""")Tj
+/TT4 1 Tf
+0 g
+-2.4 -1.1429 TD
+(32:)Tj
+T*
+(33:)Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+2.4 0 TD
+(def)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( )Tj
+/TT2 1 Tf
+0 0 1 rg
+0.6 0 TD
+(calculate_bill_amount)Tj
+/TT4 1 Tf
+0 g
+12.6 0 TD
+(\(food_type, quantity_ordered, distance_in_kms\):)Tj
+-17.4 -1.1429 TD
+[(34:)-599.7(    bill_amount = 0)]TJ
+T*
+[(35:)-599.7(    )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+4.8 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( food_type )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+6.6 0 TD
+(not)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+0.6 0 TD
+(in)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( )Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("VN")Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+( )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+0.6 0 TD
+(or)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( quantity_ordered < 1 )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+13.2 0 TD
+(or)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( distance_in_kms <= 0:)Tj
+-35.4 -1.1429 TD
+[(36:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(return)Tj
+/TT4 1 Tf
+0 g
+3.6 0 TD
+( -1)Tj
+-10.8 -1.1429 TD
+[(37:)-599.7(    )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+4.8 0 TD
+(else)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+(:)Tj
+-7.2 -1.1429 TD
+[(38:)-599.7(        bill_amount += 120 )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+18.6 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( food_type == )Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+8.4 0 TD
+(íVí)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+0.6 0 TD
+(else)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+( 150)Tj
+-33 -1.1429 TD
+[(39:)-599.7(        bill_amount *= quantity_ordered)]TJ
+T*
+(40:)Tj
+T*
+[(41:)-599.7(        dist_01 = distance_in_kms - 3)]TJ
+T*
+[(42:)-599.7(        dist_02 = dist_01 - 3)]TJ
+T*
+[(43:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( dist_01 > 0:)Tj
+-8.4 -1.1429 TD
+[(44:)-599.7(            )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+9.6 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( dist_02 > 0:)Tj
+-10.8 -1.1429 TD
+[(45:)-599.7(                bill_amount += 3 * dist_01 + 6 * dist_02)]TJ
+T*
+[(46:)-599.7(            )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+9.6 0 TD
+(else)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+(:)Tj
+-12 -1.1429 TD
+[(47:)-599.7(                bill_amount += 3 * dist_01)]TJ
+T*
+(48:)Tj
+T*
+[(49:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(return)Tj
+/TT4 1 Tf
+0 g
+3.6 0 TD
+( bill_amount)Tj
+-10.8 -1.1429 TD
+(50:)Tj
+T*
+(51:)Tj
+T*
+[(52:)-599.7(bill_amount = calculate_bill_amount\()]TJ
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+24 0 TD
+("N")Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+(, 1, 7\))Tj
+-25.8 -1.1429 TD
+(53:)Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+2.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\(bill_amount\))Tj
+-5.4 -1.1429 TD
+(54:)Tj
+ET
+endstream
+endobj
+3 0 obj
+<<
+/ProcSet [/PDF /Text ]
+/Font <<
+/TT2 4 0 R
+/TT4 5 0 R
+>>
+/ExtGState <<
+/GS1 6 0 R
+>>
+>>
+endobj
+6 0 obj
+<<
+/Type /ExtGState
+/SA false
+/SM 0.02
+/OP false
+/op false
+/OPM 1
+/BG2 /Default
+/UCR2 /Default
+/HT /Default
+/TR2 /Default
+>>
+endobj
+8 0 obj
+<<
+/Type /FontDescriptor
+/Ascent 753
+/CapHeight 562
+/Descent -246
+/Flags 262179
+/FontBBox [-113 -250 749 801]
+/FontName /Courier-Bold
+/ItalicAngle 0
+/StemV 133
+/XHeight 439
+/StemH 84
+>>
+endobj
+9 0 obj
+<<
+/Type /FontDescriptor
+/Ascent 753
+/CapHeight 562
+/Descent -246
+/Flags 35
+/FontBBox [-28 -250 628 805]
+/FontName /Courier
+/ItalicAngle 0
+/StemV 51
+/XHeight 426
+/StemH 51
+>>
+endobj
+4 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/FirstChar 32
+/LastChar 226
+/Widths [600 0 600 0 0 0 0 0 600 600 0 0 600 600 600 600 
+600 600 600 600 0 600 600 0 0 600 600 0 0 600 0 0 
+0 600 0 600 600 0 600 600 0 600 0 0 600 600 600 0 
+600 600 600 600 600 0 600 0 0 0 0 0 600 0 0 600 
+0 600 600 600 600 600 600 600 600 600 0 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 0 0 600 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 600 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 600 ]
+/Encoding /WinAnsiEncoding
+/BaseFont /Courier-Bold
+/FontDescriptor 8 0 R
+>>
+endobj
+5 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/FirstChar 32
+/LastChar 121
+/Widths [600 0 0 0 0 0 0 0 600 600 600 600 600 600 0 0 
+600 600 600 600 600 600 600 600 600 600 600 0 600 600 600 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 600 
+0 600 600 600 600 600 600 0 0 600 0 600 600 600 600 600 
+600 600 600 600 600 600 0 0 0 600 ]
+/Encoding /WinAnsiEncoding
+/BaseFont /Courier
+/FontDescriptor 9 0 R
+>>
+endobj
+1 0 obj
+<<
+/Type /Page
+/Parent 7 0 R
+/Resources 3 0 R
+/Contents 2 0 R
+>>
+endobj
+10 0 obj
+<<
+/S /D
+>>
+endobj
+11 0 obj
+<<
+/Nums [0 10 0 R ]
+>>
+endobj
+7 0 obj
+<<
+/Type /Pages
+/Kids [1 0 R]
+/Count 1
+/MediaBox [0 0 595 842]
+>>
+endobj
+12 0 obj
+<<
+/CreationDate (D:20191111044253+05'30')
+/ModDate (D:20191111044253+05'30')
+/Producer (PSNormalizer.framework)
+>>
+endobj
+13 0 obj
+<<
+/Type /Catalog
+/Pages 7 0 R
+/PageLabels 11 0 R
+>>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000007712 00000 n 
+0000000016 00000 n 
+0000005961 00000 n 
+0000006598 00000 n 
+0000007286 00000 n 
+0000006067 00000 n 
+0000007860 00000 n 
+0000006207 00000 n 
+0000006408 00000 n 
+0000007792 00000 n 
+0000007820 00000 n 
+0000007941 00000 n 
+0000008073 00000 n 
+trailer
+<<
+/Size 14
+/Root 13 0 R
+/Info 12 0 R
+/ID [<eaf20d7210d02bf7521e30b2ef93b50c><eaf20d7210d02bf7521e30b2ef93b50c>]
+>>
+startxref
+8142
+%%EOF

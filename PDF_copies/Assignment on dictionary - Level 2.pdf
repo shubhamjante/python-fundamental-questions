@@ -1,0 +1,555 @@
+%PDF-1.3
+%‚„œ”
+2 0 obj
+<<
+/Length 5800
+>>
+stream
+BT
+/TT2 1 Tf
+10 0 0 10 29 806.3333 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(./Programming Fundamentals using Python - Part 01/Assignment Set - 04/Assignment on dictionary )Tj
+/TT4 1 Tf
+7 0 0 7 46.8 793 Tm
+(1:)Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+1.8 0 TD
+(""")Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(2:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(Write a python function, find_correct\(\) which accepts a dictionary and returns a list as per the rules mentioned below.)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(3:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(The input dictionary will contain correct spelling of a word as key and the spelling provided by a contestant as the val)Tj
+-4.3429 -1.1429 TD
+(ue.)Tj
+/TT4 1 Tf
+2.5429 -1.1429 TD
+(4:)Tj
+T*
+(5:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(The function should identify the degree of correctness as mentioned below:)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(6:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(CORRECT, if it is an exact match\\013)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(7:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(ALMOST CORRECT, if no more than 2 letters are wrong)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(8:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(WRONG, if more than 2 letters are wrong or if length \(correct spelling versus spelling given by contestant\) mismatches.)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(9:)Tj
+-0.6 -1.1429 TD
+(10:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(and return a list containing the number of CORRECT answers, number of ALMOST CORRECT answers and number of WRONG answers)Tj
+-4.3429 -1.1429 TD
+(.)Tj
+/TT4 1 Tf
+1.9429 -1.1429 TD
+(11:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(Assume that the words contain only uppercase letters and the maximum word length is 10.)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(12:)Tj
+T*
+(13:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(=================================================================================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(14:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| Sample Input                                              | Expected Output   |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(15:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(=================================================================================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(16:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| {"THEIR": "THEIR", "BUSINESS": "BISINESS",                |                   |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(17:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| "WINDOWS":"WINDMILL", "WERE":"WEAR", "SAMPLE":"SAMPLE"}   | [2, 2, 1]         |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(18:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(=================================================================================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(19:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(""")Tj
+/TT4 1 Tf
+0 g
+-2.4 -1.1429 TD
+(20:)Tj
+T*
+(21:)Tj
+T*
+(22:)Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+2.4 0 TD
+(def)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( )Tj
+/TT2 1 Tf
+0 0 1 rg
+0.6 0 TD
+(find_correct)Tj
+/TT4 1 Tf
+0 g
+7.2 0 TD
+(\(word_dict\):)Tj
+-12 -1.1429 TD
+[(23:)-599.7(    wrong = 0)]TJ
+T*
+[(24:)-599.7(    almost = 0)]TJ
+T*
+[(25:)-599.7(    correct = 0)]TJ
+T*
+[(26:)-599.7(    li = [])]TJ
+T*
+(27:)Tj
+T*
+[(28:)-599.7(    )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+4.8 0 TD
+(for)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( i, j )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+3.6 0 TD
+(in)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( word_dict.items\(\):)Tj
+-11.4 -1.1429 TD
+[(29:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( len\(i\) != len\(j\):)Tj
+-8.4 -1.1429 TD
+[(30:)-599.7(            wrong += 1)]TJ
+T*
+[(31:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(else)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+(:)Tj
+-9.6 -1.1429 TD
+[(32:)-599.7(            mistake_counter = 0)]TJ
+T*
+[(33:)-599.7(            )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+9.6 0 TD
+(for)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( x )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+1.8 0 TD
+(in)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( range\(0, len\(i\)\):)Tj
+-14.4 -1.1429 TD
+[(34:)-599.7(                )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+12 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( i[x] == j[x]:)Tj
+-13.2 -1.1429 TD
+[(35:)-599.7(                    )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+14.4 0 TD
+(continue)Tj
+/TT4 1 Tf
+0 g
+-14.4 -1.1429 TD
+[(36:)-599.7(                )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+12 0 TD
+(else)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+(:)Tj
+-14.4 -1.1429 TD
+[(37:)-599.7(                    mistake_counter += 1)]TJ
+T*
+(38:)Tj
+T*
+[(39:)-599.7(            )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+9.6 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( mistake_counter == 0:)Tj
+-10.8 -1.1429 TD
+[(40:)-599.7(                correct += 1)]TJ
+T*
+(41:)Tj
+T*
+[(42:)-599.7(            )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+9.6 0 TD
+(elif)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+( mistake_counter <= 2:)Tj
+-12 -1.1429 TD
+[(43:)-599.7(                almost += 1)]TJ
+T*
+(44:)Tj
+T*
+[(45:)-599.7(            )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+9.6 0 TD
+(else)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+(:)Tj
+-12 -1.1429 TD
+[(46:)-599.7(                wrong += 1)]TJ
+T*
+(47:)Tj
+T*
+[(48:)-599.7(    )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+4.8 0 TD
+(return)Tj
+/TT4 1 Tf
+0 g
+3.6 0 TD
+( [correct, almost, wrong])Tj
+-8.4 -1.1429 TD
+(49:)Tj
+T*
+(50:)Tj
+T*
+[(51:)-599.7(word_dict={)]TJ
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+9 0 TD
+("THEIR")Tj
+/TT4 1 Tf
+0 g
+4.2 0 TD
+(: )Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+1.2 0 TD
+("THEIR")Tj
+/TT4 1 Tf
+0 g
+4.2 0 TD
+(,)Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("BUSINESS")Tj
+/TT4 1 Tf
+0 g
+6 0 TD
+(:)Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("BISINESS")Tj
+/TT4 1 Tf
+0 g
+6 0 TD
+(,)Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("WINDOWS")Tj
+/TT4 1 Tf
+0 g
+5.4 0 TD
+(:)Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("WINDMILL")Tj
+/TT4 1 Tf
+0 g
+6 0 TD
+(,)Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("WERE")Tj
+/TT4 1 Tf
+0 g
+3.6 0 TD
+(:)Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("WEAR")Tj
+/TT4 1 Tf
+0 g
+3.6 0 TD
+(,)Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("SAMPLE")Tj
+/TT4 1 Tf
+0 g
+4.8 0 TD
+(:)Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("SAMPLE")Tj
+/TT4 1 Tf
+0 g
+4.8 0 TD
+(})Tj
+-63.6 -1.1429 TD
+(52:)Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+2.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\(find_correct\(word_dict\)\))Tj
+ET
+endstream
+endobj
+3 0 obj
+<<
+/ProcSet [/PDF /Text ]
+/Font <<
+/TT2 4 0 R
+/TT4 5 0 R
+>>
+/ExtGState <<
+/GS1 6 0 R
+>>
+>>
+endobj
+6 0 obj
+<<
+/Type /ExtGState
+/SA false
+/SM 0.02
+/OP false
+/op false
+/OPM 1
+/BG2 /Default
+/UCR2 /Default
+/HT /Default
+/TR2 /Default
+>>
+endobj
+8 0 obj
+<<
+/Type /FontDescriptor
+/Ascent 753
+/CapHeight 562
+/Descent -246
+/Flags 262179
+/FontBBox [-113 -250 749 801]
+/FontName /Courier-Bold
+/ItalicAngle 0
+/StemV 133
+/XHeight 439
+/StemH 84
+>>
+endobj
+9 0 obj
+<<
+/Type /FontDescriptor
+/Ascent 753
+/CapHeight 562
+/Descent -246
+/Flags 35
+/FontBBox [-28 -250 628 805]
+/FontName /Courier
+/ItalicAngle 0
+/StemV 51
+/XHeight 426
+/StemH 51
+>>
+endobj
+4 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/FirstChar 32
+/LastChar 125
+/Widths [600 0 600 0 0 0 0 0 600 600 0 0 600 600 600 600 
+600 600 600 600 600 600 0 0 0 600 600 0 0 600 0 0 
+0 600 600 600 600 600 600 600 600 600 0 0 600 600 600 600 
+600 0 600 600 600 600 0 600 0 0 0 600 600 600 0 600 
+0 600 600 600 600 600 600 600 600 600 0 600 600 600 600 600 
+600 0 600 600 600 600 600 600 600 600 0 600 600 600 ]
+/Encoding /WinAnsiEncoding
+/BaseFont /Courier-Bold
+/FontDescriptor 8 0 R
+>>
+endobj
+5 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/FirstChar 32
+/LastChar 125
+/Widths [600 600 0 0 0 0 0 0 600 600 0 600 600 0 600 0 
+600 600 600 600 600 600 600 600 600 600 600 0 600 600 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 600 0 600 0 600 
+0 600 0 600 600 600 600 600 0 600 600 600 600 600 600 600 
+0 0 600 600 600 600 0 600 600 0 0 600 0 600 ]
+/Encoding /WinAnsiEncoding
+/BaseFont /Courier
+/FontDescriptor 9 0 R
+>>
+endobj
+1 0 obj
+<<
+/Type /Page
+/Parent 7 0 R
+/Resources 3 0 R
+/Contents 2 0 R
+>>
+endobj
+10 0 obj
+<<
+/S /D
+>>
+endobj
+11 0 obj
+<<
+/Nums [0 10 0 R ]
+>>
+endobj
+7 0 obj
+<<
+/Type /Pages
+/Kids [1 0 R]
+/Count 1
+/MediaBox [0 0 595 842]
+>>
+endobj
+12 0 obj
+<<
+/CreationDate (D:20191111044253+05'30')
+/ModDate (D:20191111044253+05'30')
+/Producer (PSNormalizer.framework)
+>>
+endobj
+13 0 obj
+<<
+/Type /Catalog
+/Pages 7 0 R
+/PageLabels 11 0 R
+>>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000007434 00000 n 
+0000000016 00000 n 
+0000005868 00000 n 
+0000006505 00000 n 
+0000006994 00000 n 
+0000005974 00000 n 
+0000007582 00000 n 
+0000006114 00000 n 
+0000006315 00000 n 
+0000007514 00000 n 
+0000007542 00000 n 
+0000007663 00000 n 
+0000007795 00000 n 
+trailer
+<<
+/Size 14
+/Root 13 0 R
+/Info 12 0 R
+/ID [<259146cc50a135d9cf762fdb476b0452><259146cc50a135d9cf762fdb476b0452>]
+>>
+startxref
+7864
+%%EOF

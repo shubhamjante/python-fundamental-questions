@@ -1,0 +1,974 @@
+%PDF-1.3
+%‚„œ”
+2 0 obj
+<<
+/Length 12010
+>>
+stream
+BT
+/TT2 1 Tf
+10 0 0 10 29 806.3333 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+(./Programming Fundamentals using Python - Part 01/Assignment Set - 02/Assignment on all select)Tj
+ET
+BT
+10 0 0 10 593.0918 806.3333 Tm
+(i)Tj
+ET
+BT
+/TT4 1 Tf
+7 0 0 7 46.8 793 Tm
+(1:)Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+1.8 0 TD
+(""")Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(2:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(The Metro Bank provides various types of loans such as car loans, business loans and house loans to its account)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(3:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(holders. Write a python program to implement the following requirements:)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(4:)Tj
+T*
+(5:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(1. Initialize the following variables with appropriate input values:account_number, account_balance, salary, loan_type,)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(6:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(loan_amount_expected and customer_emi_expected.)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(7:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(2. The account number should be of 4 digits and its first digit should be 1.)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(8:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(3. The customer should have a minimum balance of Rupees 1 Lakh in the account.)Tj
+/TT4 1 Tf
+-1.8 -1.1429 TD
+(9:)Tj
+/TT2 1 Tf
+1.8 0 TD
+(4. If the above rules are valid, determine the eligible loan amount and the EMI that the bank can provide to its)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(10:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(customers based on their salary and the loan type they expect to avail.)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(11:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(5. The bank would provide the loan, only if the loan amount and the number of EMI‚\\200\\231s requested by the customer is)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(12:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(less than or equal to the loan amount and the number of EMI‚\\200\\231s decided by the bank respectively.)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(13:)Tj
+T*
+(14:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(Display appropriate error messages for all invalid data. If all the business rules are satisfied ,then display account n)Tj
+-4.3429 -1.1429 TD
+(umber, eligible and requested loan amount and EMI‚\\200\\231s.)Tj
+/TT4 1 Tf
+1.9429 -1.1429 TD
+(15:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(Test your code by providing different values for the input variables.)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(16:)Tj
+T*
+(17:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(===============================================================================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(18:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| Salary  | Loan Type | Eligible Loan Amount  | No of EMIs required to repay  |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(19:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(===============================================================================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(20:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| > 25000 | Car       | 500000                | 36                            |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(21:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| > 50000 | House     | 6000000               | 60                            |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(22:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(| > 75000 | Business  | 7500000               | 84                            |)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(23:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(===============================================================================)Tj
+/TT4 1 Tf
+-2.4 -1.1429 TD
+(24:)Tj
+/TT2 1 Tf
+2.4 0 TD
+(""")Tj
+/TT4 1 Tf
+0 g
+-2.4 -1.1429 TD
+(25:)Tj
+T*
+(26:)Tj
+T*
+(27:)Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+2.4 0 TD
+(def)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( )Tj
+/TT2 1 Tf
+0 0 1 rg
+0.6 0 TD
+(calculate_loan)Tj
+/TT4 1 Tf
+0 g
+8.4 0 TD
+(\(account_number, salary, account_balance, loan_type, loan_amount_expected, customer_emi_expected\):)Tj
+-13.2 -1.1429 TD
+[(28:)-599.7(  eligible_loan_amount = 0)]TJ
+T*
+[(29:)-599.7(  bank_emi_expected = 0)]TJ
+T*
+[(30:)-599.7(  )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+3.6 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( account_number > 999 )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+13.2 0 TD
+(and)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( account_number < 2000:)Tj
+-19.8 -1.1429 TD
+[(31:)-599.7(    )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+4.8 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( account_balance >= 100000:)Tj
+-6 -1.1429 TD
+[(32:)-599.7(      )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+6 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( salary > 25000 )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+9.6 0 TD
+(and)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( loan_type == )Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+8.4 0 TD
+("Car")Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(:)Tj
+-30 -1.1429 TD
+[(33:)-599.7(        eligible_loan_amount = 500000)]TJ
+T*
+[(34:)-599.7(        bank_emi_expected = 36)]TJ
+T*
+[(35:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( loan_amount_expected <= eligible_loan_amount )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+27.6 0 TD
+(and)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( customer_emi_expected <= bank_emi_expected:)Tj
+-37.8 -1.1429 TD
+[(36:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Account number:")Tj
+/TT4 1 Tf
+0 g
+10.2 0 TD
+(, account_number\))Tj
+-22.2 -1.1429 TD
+[(37:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("The customer can avail the amount of Rs.")Tj
+/TT4 1 Tf
+0 g
+25.2 0 TD
+(, eligible_loan_amount\))Tj
+-37.2 -1.1429 TD
+[(38:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Eligible EMIs :")Tj
+/TT4 1 Tf
+0 g
+10.2 0 TD
+(, bank_emi_expected\))Tj
+-22.2 -1.1429 TD
+[(39:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Requested loan amount:")Tj
+/TT4 1 Tf
+0 g
+14.4 0 TD
+(, loan_amount_expected\))Tj
+-26.4 -1.1429 TD
+[(40:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Requested EMIís:")Tj
+/TT4 1 Tf
+0 g
+10.8 0 TD
+(, customer_emi_expected\))Tj
+-22.8 -1.1429 TD
+[(41:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(else)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+(:)Tj
+-9.6 -1.1429 TD
+[(42:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("The customer is not eligible for the loan")Tj
+/TT4 1 Tf
+0 g
+25.8 0 TD
+(\))Tj
+-37.8 -1.1429 TD
+[(43:)-599.7(      )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+6 0 TD
+(elif)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+( salary > 50000 )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+9.6 0 TD
+(and)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( loan_type == )Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+8.4 0 TD
+("House")Tj
+/TT4 1 Tf
+0 g
+4.2 0 TD
+(:)Tj
+-32.4 -1.1429 TD
+[(44:)-599.7(        eligible_loan_amount = 6000000)]TJ
+T*
+[(45:)-599.7(        bank_emi_expected = 60)]TJ
+T*
+[(46:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( loan_amount_expected <= eligible_loan_amount )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+27.6 0 TD
+(and)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( customer_emi_expected <= bank_emi_expected:)Tj
+-37.8 -1.1429 TD
+[(47:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Account number:")Tj
+/TT4 1 Tf
+0 g
+10.2 0 TD
+(, account_number\))Tj
+-22.2 -1.1429 TD
+[(48:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("The customer can avail the amount of Rs.")Tj
+/TT4 1 Tf
+0 g
+25.2 0 TD
+(, eligible_loan_amount\))Tj
+-37.2 -1.1429 TD
+[(49:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Eligible EMIs :")Tj
+/TT4 1 Tf
+0 g
+10.2 0 TD
+(, bank_emi_expected\))Tj
+-22.2 -1.1429 TD
+[(50:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Requested loan amount:")Tj
+/TT4 1 Tf
+0 g
+14.4 0 TD
+(, loan_amount_expected\))Tj
+-26.4 -1.1429 TD
+[(51:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Requested EMIís:")Tj
+/TT4 1 Tf
+0 g
+10.8 0 TD
+(, customer_emi_expected\))Tj
+-22.8 -1.1429 TD
+[(52:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(else)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+(:)Tj
+-9.6 -1.1429 TD
+[(53:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("The customer is not eligible for the loan")Tj
+/TT4 1 Tf
+0 g
+25.8 0 TD
+(\))Tj
+-37.8 -1.1429 TD
+[(54:)-599.7(      )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+6 0 TD
+(elif)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+( salary > 75000 )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+9.6 0 TD
+(and)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( loan_type == )Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+8.4 0 TD
+("Business")Tj
+/TT4 1 Tf
+0 g
+6 0 TD
+(:)Tj
+-34.2 -1.1429 TD
+[(55:)-599.7(        eligible_loan_amount = 7500000)]TJ
+T*
+[(56:)-599.7(        bank_emi_expected = 84)]TJ
+T*
+[(57:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(if)Tj
+/TT4 1 Tf
+0 g
+1.2 0 TD
+( loan_amount_expected <= eligible_loan_amount )Tj
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+27.6 0 TD
+(and)Tj
+/TT4 1 Tf
+0 g
+1.8 0 TD
+( customer_emi_expected <= bank_emi_expected:)Tj
+-37.8 -1.1429 TD
+[(58:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Account number:")Tj
+/TT4 1 Tf
+0 g
+10.2 0 TD
+(, account_number\))Tj
+-22.2 -1.1429 TD
+[(59:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("The customer can avail the amount of Rs.")Tj
+/TT4 1 Tf
+0 g
+25.2 0 TD
+(, eligible_loan_amount\))Tj
+-37.2 -1.1429 TD
+[(60:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Eligible EMIs :")Tj
+/TT4 1 Tf
+0 g
+10.2 0 TD
+(, bank_emi_expected\))Tj
+-22.2 -1.1429 TD
+[(61:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Requested loan amount:")Tj
+/TT4 1 Tf
+0 g
+14.4 0 TD
+(, loan_amount_expected\))Tj
+-26.4 -1.1429 TD
+[(62:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Requested EMIís:")Tj
+/TT4 1 Tf
+0 g
+10.8 0 TD
+(, customer_emi_expected\))Tj
+-22.8 -1.1429 TD
+[(63:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(else)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+(:)Tj
+-9.6 -1.1429 TD
+[(64:)-599.7(          )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+8.4 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("The customer is not eligible for the loan")Tj
+/TT4 1 Tf
+0 g
+25.8 0 TD
+(\))Tj
+-37.8 -1.1429 TD
+[(65:)-599.7(      )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+6 0 TD
+(else)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+(:)Tj
+-8.4 -1.1429 TD
+[(66:)-599.7(        )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+7.2 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Invalid loan type or salary")Tj
+/TT4 1 Tf
+0 g
+17.4 0 TD
+(\))Tj
+-28.2 -1.1429 TD
+[(67:)-599.7(    )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+4.8 0 TD
+(else)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+(:)Tj
+-7.2 -1.1429 TD
+[(68:)-599.7(      )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+6 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Insufficient account balance")Tj
+/TT4 1 Tf
+0 g
+18 0 TD
+(\))Tj
+-27.6 -1.1429 TD
+[(69:)-599.7(  )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+3.6 0 TD
+(else)Tj
+/TT4 1 Tf
+0 g
+2.4 0 TD
+(:)Tj
+-6 -1.1429 TD
+[(70:)-599.7(    )]TJ
+/TT2 1 Tf
+0.627 0.125 0.941 rg
+4.8 0 TD
+(print)Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(\()Tj
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+0.6 0 TD
+("Invalid account number")Tj
+/TT4 1 Tf
+0 g
+14.4 0 TD
+(\))Tj
+-22.8 -1.1429 TD
+(71:)Tj
+T*
+(72:)Tj
+T*
+[(73:)-599.7(calculate_loan\(1001, 40000, 250000, )]TJ
+/TT2 1 Tf
+0.737 0.561 0.561 rg
+24 0 TD
+("Car")Tj
+/TT4 1 Tf
+0 g
+3 0 TD
+(, 300000, 30\))Tj
+ET
+endstream
+endobj
+3 0 obj
+<<
+/ProcSet [/PDF /Text ]
+/Font <<
+/TT2 4 0 R
+/TT4 5 0 R
+>>
+/ExtGState <<
+/GS1 6 0 R
+>>
+>>
+endobj
+6 0 obj
+<<
+/Type /ExtGState
+/SA false
+/SM 0.02
+/OP false
+/op false
+/OPM 1
+/BG2 /Default
+/UCR2 /Default
+/HT /Default
+/TR2 /Default
+>>
+endobj
+8 0 obj
+<<
+/Type /FontDescriptor
+/Ascent 753
+/CapHeight 562
+/Descent -246
+/Flags 262179
+/FontBBox [-113 -250 749 801]
+/FontName /Courier-Bold
+/ItalicAngle 0
+/StemV 133
+/XHeight 439
+/StemH 84
+>>
+endobj
+9 0 obj
+<<
+/Type /FontDescriptor
+/Ascent 753
+/CapHeight 562
+/Descent -246
+/Flags 35
+/FontBBox [-28 -250 628 805]
+/FontName /Courier
+/ItalicAngle 0
+/StemV 51
+/XHeight 426
+/StemH 51
+>>
+endobj
+4 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/FirstChar 32
+/LastChar 226
+/Widths [600 0 600 0 0 0 0 0 0 0 0 0 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 0 0 600 600 0 
+0 600 600 600 600 600 600 0 600 600 0 0 600 600 600 0 
+600 0 600 600 600 0 0 600 0 0 0 0 600 0 0 600 
+0 600 600 600 600 600 600 600 600 600 0 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 0 600 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 600 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 600 ]
+/Encoding /WinAnsiEncoding
+/BaseFont /Courier-Bold
+/FontDescriptor 8 0 R
+>>
+endobj
+5 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/FirstChar 32
+/LastChar 121
+/Widths [600 0 0 0 0 0 0 0 600 600 0 0 600 0 0 0 
+600 600 600 600 600 600 600 600 600 600 600 0 600 600 600 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 600 
+0 600 600 600 600 600 0 600 0 600 0 600 600 600 600 600 
+600 0 600 600 600 600 0 0 600 600 ]
+/Encoding /WinAnsiEncoding
+/BaseFont /Courier
+/FontDescriptor 9 0 R
+>>
+endobj
+1 0 obj
+<<
+/Type /Page
+/Parent 7 0 R
+/Resources 3 0 R
+/Contents 2 0 R
+>>
+endobj
+10 0 obj
+<<
+/S /D
+>>
+endobj
+11 0 obj
+<<
+/Nums [0 10 0 R ]
+>>
+endobj
+7 0 obj
+<<
+/Type /Pages
+/Kids [1 0 R]
+/Count 1
+/MediaBox [0 0 595 842]
+>>
+endobj
+12 0 obj
+<<
+/CreationDate (D:20191111044252+05'30')
+/ModDate (D:20191111044252+05'30')
+/Producer (PSNormalizer.framework)
+>>
+endobj
+13 0 obj
+<<
+/Type /Catalog
+/Pages 7 0 R
+/PageLabels 11 0 R
+>>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000013832 00000 n 
+0000000016 00000 n 
+0000012079 00000 n 
+0000012716 00000 n 
+0000013412 00000 n 
+0000012185 00000 n 
+0000013980 00000 n 
+0000012325 00000 n 
+0000012526 00000 n 
+0000013912 00000 n 
+0000013940 00000 n 
+0000014061 00000 n 
+0000014193 00000 n 
+trailer
+<<
+/Size 14
+/Root 13 0 R
+/Info 12 0 R
+/ID [<82a9cb782efeaede8ccea0ecc8d647f4><82a9cb782efeaede8ccea0ecc8d647f4>]
+>>
+startxref
+14262
+%%EOF
